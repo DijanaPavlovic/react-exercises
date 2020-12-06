@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import CancelablePromise from "./components/CancelablePromise";
 import Refs from "./components/Refs";
+import Clicks from "./components/Clicks";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
             <li>
               <Link to={"/refs"}>Refs</Link>
             </li>
+            <li>
+              <Link to={"/clicks"}>Clicks</Link>
+            </li>
           </ul>
         </nav>
         <hr />
@@ -32,6 +36,7 @@ function App() {
             component={CancelablePromise}
           />
           <Route path="/refs" component={Refs} />
+          <Route path="/clicks" component={Clicks} />
         </Switch>
       </div>
     </Router>
