@@ -3,31 +3,32 @@ import Home from "./components/Home";
 import CancelablePromise from "./components/CancelablePromise";
 import Refs from "./components/Refs";
 import Clicks from "./components/Clicks";
-import "./App.css";
+import styled from "styled-components";
+
+const AppWrapper = styled.div`
+  padding: 40px;
+`;
+
+const Tabs = styled.div`
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+`;
+
+const Tab = styled(Link)`
+  margin-right: 20px;
+  color: darkblue;
+`;
 
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to={"/"}>Home</Link>
-            </li>
-            <li>
-              <Link to={"/cancelable-promise-with-error"}>
-                Cancelable Promise
-              </Link>
-            </li>
-            <li>
-              <Link to={"/refs"}>Refs</Link>
-            </li>
-            <li>
-              <Link to={"/clicks"}>Clicks</Link>
-            </li>
-          </ul>
-        </nav>
-        <hr />
+      <AppWrapper>
+        <Tabs>
+          <Tab to={"/"}>Home</Tab>
+          <Tab to={"/cancelable-promise-with-error"}>Cancelable Promise</Tab>
+          <Tab to={"/refs"}>Refs</Tab>
+          <Tab to={"/clicks"}>Clicks</Tab>
+        </Tabs>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route
@@ -38,7 +39,7 @@ function App() {
           <Route path="/refs" component={Refs} />
           <Route path="/clicks" component={Clicks} />
         </Switch>
-      </div>
+      </AppWrapper>
     </Router>
   );
 }
