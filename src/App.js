@@ -4,6 +4,7 @@ import CancelablePromise from "./components/CancelablePromise";
 import Refs from "./components/Refs";
 import Clicks from "./components/Clicks";
 import styled from "styled-components";
+import Performance from "./performance/withMemoImprovement";
 
 const AppWrapper = styled.div`
   padding: 40px;
@@ -28,6 +29,7 @@ function App() {
           <Tab to={"/cancelable-promise-with-error"}>Cancelable Promise</Tab>
           <Tab to={"/refs"}>Refs</Tab>
           <Tab to={"/clicks"}>Clicks</Tab>
+          <Tab to={"/performance"}>Performance</Tab>
         </Tabs>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -38,6 +40,7 @@ function App() {
           />
           <Route path="/refs" component={Refs} />
           <Route path="/clicks" component={Clicks} />
+          <Route path="/performance" component={Performance} />
         </Switch>
       </AppWrapper>
     </Router>

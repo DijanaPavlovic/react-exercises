@@ -1,3 +1,0 @@
-Object.is(NaN, NaN) - true
-NaN !== NaN, NaN is not equal to itself
-
